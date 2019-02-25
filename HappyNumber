@@ -1,0 +1,67 @@
+//  main.cpp
+//  hash_setSTL
+//
+//  Created by Hector Ramirez on 2/22/19.
+//  Copyright © 2019 Hector Ramirez. All rights reserved.
+//
+
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+/*
+ from the STL lib we use an unordered_set<>
+ 
+ Unordered sets are containers that store unique elements in no particular
+ oreder, and which allow for fast retrieval of individual elements based on their
+ value.
+ 
+ in an unordered set, the value of an element is at the same time it's key, that
+ identifies it uniquely.key are immutable, so the elemenets, once in the contatiner,
+ cannot be modified. However, they can be inserted/removed.
+ 
+ Internally, the elements in an unordered set, are not sorted in any particular
+ order, but organized into buckets depending on their hash values to allow for fast access
+ to individual elements directly by their values (with a constant average time complexity
+ on average).
+
+ */
+
+//funct prototype
+bool isHappy(int);
+
+int main(int argc, const char * argv[]) {
+  
+    if(isHappy(7))
+        cout << "Happy Number" << endl;
+    else
+        cout << "Not a Happy Number" << endl;
+    
+    return 0;
+}
+
+bool isHappy(int n){
+    
+    //Declaring an unordered set called temporary
+    unordered_set<int> tmp;
+    
+    
+    while(n != 1){
+
+        if(tmp.find(n) == tmp.end())
+            tmp.insert(n);
+        else
+            return false;
+    
+        int sum= 0;
+        while(n != 0){
+            sum += pow(n %10,2);
+            n /= 10;
+        }
+        n = sum;
+    
+        
+    }
+    return true;
+}
+
