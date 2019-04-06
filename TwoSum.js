@@ -71,7 +71,7 @@ var twoSum = function(nums, target) {
          * 
          */ 
         HashTable[target - complement]=i;
-        console.log(HashTable)
+        //console.log(HashTable)
     }
 };
 
