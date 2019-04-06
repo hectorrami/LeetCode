@@ -77,7 +77,7 @@ var twoSum = function(nums, target) {
 
 
 nums = [2,7,11,15,9];
-target =11;
+target = 9;
 
 twoSum(nums, target);
 
