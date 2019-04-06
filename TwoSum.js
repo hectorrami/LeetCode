@@ -29,5 +29,60 @@ var twoSum = function(nums, target) {
     return result;
 };
 
+//End of Brute Force way
+
+
+//HASH TABLE 
+//TIME COMPLEXITY:O(1)
+var twoSum = function(nums, target) {
+    
+    //create a plain object
+    var HashTable = {};
+    
+    //iterate through the elements of array nums
+    for(let i =0;i < nums.length;i++){
+
+        /**
+         * 
+         * when i = 0
+         * complement = 9 -2= 7
+         */
+        const complement = target - nums[i];
+   
+          /**
+           * if('key' in a){
+           *  return indexes 
+           * }
+           *
+           */
+
+        if(complement in HashTable){
+            return [nums.indexOf(complement), i];
+        }
+        /**
+         * 
+         * 
+         * var HashTable = {};
+         * HashTable["key1"] = "value1"
+         * HashTable["key2"] = "Value2"
+         * ...
+         * What is happening:
+         * HashTable[key: 9-7 ='2'] = value: '0'
+         * 
+         */ 
+        HashTable[target - complement]=i;
+        console.log(HashTable)
+    }
+};
+
+
+nums = [2,7,11,15,9];
+target =11;
+
+twoSum(nums, target);
+
+
 //created by Hector Ramirez
 //LeetCode practice. 
+
+
