@@ -13,8 +13,10 @@ Explanation:
 62 + 82 = 100
 12 + 02 + 02 = 1
 
- * 
+ * NOTE: This solution is faster than 100% of javascript submissions
  */
+
+
 
 var isHappy = function(n) {
     
