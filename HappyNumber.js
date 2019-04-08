@@ -83,4 +83,4 @@ var isHappy = function(n) {
 
 
 
-isHappy(19) //print out true
+isHappy(19) //prints out true
