@@ -66,20 +66,7 @@ var isHappy = function(n) {
                 -then set n = n/10, remember to use the floor function to round it down
                 -At this point if n is still not 0 keep looping and taking the sum
                 -Once this process is over set n = sum
-                
-                
-                Example: 
-                
-                n = 19 
-                sum = 0
-                sum
-                
-            
-            */
-            
-            
-            
-            
+              */
             
             sum += Math.pow(n%10,2);
             n = Math.floor(n/10)
