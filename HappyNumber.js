@@ -33,6 +33,15 @@ var isHappy = function(n) {
         if(!mapping.has(n)){
           mapping.add(n)
           //console.log(mapping)
+            /**
+             * 
+             * 
+             * Set { 19 }
+               Set { 19, 82 }
+               Set { 19, 82, 68 }
+               Set { 19, 82, 68, 100 }
+              */
+            
         }
         else 
 
