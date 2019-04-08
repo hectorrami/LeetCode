@@ -1,11 +1,7 @@
 /**
  * Write an algorithm to determine if a number is "happy".
 
-A happy number is a number defined by the following process: 
-Starting with any positive integer, replace the number by the sum 
-of the squares of its digits, and repeat the process until the number
-equals 1 (where it will stay), or it loops endlessly in a cycle which
-does not include 1. Those numbers for which this process ends in 1 are happy numbers.
+A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.
 
 Example: 
 
@@ -22,28 +18,37 @@ Explanation:
 
 var isHappy = function(n) {
     
- 
     let mapping = new Set();
-    
+
     while(n != 1){
         
         if(!mapping.has(n)){
           mapping.add(n)
-          console.log(mapping)
+          //console.log(mapping)
         }
         else 
-          return false;
 
+        //if the number is already on the set
+        //then it should return false because
+        //at this point it would just keep repeating
+        //so this is a good indicator to terminate the 
+        //process
+        return false;
+
+        //create a sum variable outside 
+        //of the while loop and set it to zero
         let sum = 0;
         while(n != 0){
             sum += Math.pow(n%10,2);
             n = Math.floor(n/10)
         }
-        
+  
         n = sum
+
+        //NOTE: once the sum == 0 we return true
     }
     
     return true;
 };
 
-isHappy(19)
+isHappy(19) //print out true
