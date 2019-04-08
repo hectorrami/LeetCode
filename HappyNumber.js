@@ -20,10 +20,16 @@ Explanation:
 
 var isHappy = function(n) {
     
+    //create a new set in order to keep track of 
+    //what numbers have been seen before
     let mapping = new Set();
 
     while(n != 1){
         
+        //if(n is not in the set)
+        //{
+        //     put it in the set
+        // }
         if(!mapping.has(n)){
           mapping.add(n)
           //console.log(mapping)
@@ -41,6 +47,31 @@ var isHappy = function(n) {
         //of the while loop and set it to zero
         let sum = 0;
         while(n != 0){
+            
+            /*
+                This while loop is very important: it is reponsible for the major calculations 
+                
+                Here is how it works:
+                -start by setting the sum = 0 before the loop
+                -take the mod of n and take that to the power of 2 
+                -then set n = n/10, remember to use the floor function to round it down
+                -At this point if n is still not 0 keep looping and taking the sum
+                -Once this process is over set n = sum
+                
+                
+                Example: 
+                
+                n = 19 
+                sum = 0
+                sum
+                
+            
+            */
+            
+            
+            
+            
+            
             sum += Math.pow(n%10,2);
             n = Math.floor(n/10)
         }
@@ -52,5 +83,8 @@ var isHappy = function(n) {
     
     return true;
 };
+
+
+
 
 isHappy(19) //print out true
