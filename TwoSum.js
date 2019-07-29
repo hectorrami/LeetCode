@@ -29,7 +29,7 @@ var twoSum = function(nums, target) {
     return result;
 };
 
-//End of Brute Force way
+//End of Brute Force approach
 
 
 //HASH TABLE 
